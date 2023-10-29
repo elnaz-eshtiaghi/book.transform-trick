@@ -1,0 +1,218 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url(../img/20231006_185754.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+@font-face {
+  font-family: carter;
+  src: url(../font/CarterOne-Regular.ttf);
+}
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.table {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 250px;
+}
+.table > img {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.book > .box {
+  width: 600px;
+  height: 380px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  transform-origin: bottom;
+  transition: 1s;
+}
+.book > .box:hover .three {
+  transform-origin: left;
+  transform: perspective(1800px) rotatey(-140deg);
+}
+.book > .box:hover .three::after {
+  width: 0;
+}
+.book > .box > .paper {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  font-size: 5vw;
+  transform-style: preserve-3d;
+  transition: 1s;
+  box-shadow: 0 10px 10px rgb(43, 43, 43);
+}
+.book > .box > .paper > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.book > .box > .paper > div:nth-of-type(1) {
+  background-color: #856f69;
+}
+.book > .box > .paper > div:nth-of-type(2) {
+  background-color: #273141;
+  transform: translateZ(-1px);
+}
+.book > .box > .paper > div:nth-of-type(2) > figure {
+  opacity: 0.4;
+}
+.book > .box .one {
+  transform: translateZ(100px);
+}
+.book > .box .one:hover ~ .three {
+  transform-origin: left;
+  transform: perspective(1800px) rotatey(-140deg);
+}
+.book > .box .one > div:nth-of-type(2) > figure {
+  opacity: 0.2;
+}
+.book > .box .one > div:nth-of-type(1) > figure {
+  opacity: 1;
+}
+.book > .box .one > div > figure {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.book > .box .one > div > figure > img {
+  -o-object-position: -170px;
+     object-position: -170px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+.book > .box .two {
+  background-color: #856f69;
+  transform: translateZ(-100px);
+}
+.book > .box .two > .row {
+  text-transform: uppercase;
+  font-family: carter;
+  justify-content: center;
+  align-content: center;
+}
+.book > .box .two > .row > * {
+  text-align: center;
+  margin: 10px;
+}
+.book > .box .two > .row > h2 {
+  font-size: 1.9vw;
+  width: 100%;
+}
+.book > .box .two > .row > p {
+  font-size: 1vw;
+  width: 100%;
+  letter-spacing: 3px;
+}
+.book > .box .two > .row > nav {
+  width: 100%;
+  height: 35px;
+}
+.book > .box .two > .row > nav > ul {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.book > .box .two > .row > nav > ul > li {
+  height: 100%;
+  margin: 5px;
+}
+.book > .box .two > .row > nav > ul > li:hover > a {
+  background-color: #273141;
+  color: #856f69;
+}
+.book > .box .two > .row > nav > ul > li > a {
+  font-size: 1vw;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #273141;
+  padding: 7px;
+}
+.book > .box .two:hover ~ .three {
+  transform-origin: left;
+  transform: perspective(1800px) rotatey(-140deg);
+}
+.book > .box .two:hover ~ .one {
+  transform-origin: right;
+  transform: perspective(1800px) rotatey(140deg);
+}
+.book > .box .three {
+  transform: translateZ(300px);
+}
+.book > .box .three::after {
+  content: "";
+  height: 100%;
+  width: 20px;
+  right: -20px;
+  top: 0;
+  background-color: azure;
+  position: absolute;
+  transform-origin: left;
+  transform: perspective(800px) rotatey(70deg);
+  transition: 1s;
+}
+.book > .box .three > div > figure {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book > .box .three > div > figure > img {
+  width: 77%;
+}
+.book > .box .three:hover ~ .one {
+  transform-origin: right;
+  transform: perspective(1800px) rotatey(140deg);
+}/*# sourceMappingURL=book.css.map */

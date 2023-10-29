@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-image: url(../img/20231006_185754.jpg);
+    background-size: cover;
+    position: relative;
+    
+}
+$color1:#273141;
+$color2:#856f69;
+@font-face {
+    font-family: carter;
+    src: url(../font/CarterOne-Regular.ttf);
+}
+
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+main {
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+
+}
+.table{
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    object-fit: contain;
+    width: 100%;
+    height: 250px;
+    >img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    
+
+
+    >.box {
+        width: 600px;
+        height: 380px;
+        position: relative;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        transform-origin: bottom;
+        transition: 1s;
+        &:hover {
+            
+            .three {
+                transform-origin: left;
+                transform: perspective(1800px) rotatey(-140deg) ;
+                &::after{
+                    width: 0;
+                }
+            }
+        }
+
+        >.paper {
+            width: 250px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 30%;
+            font-size: 5vw;
+            transform-style: preserve-3d;
+            transition: 1s;
+            box-shadow: 0 10px  10px rgb(43, 43, 43);
+
+            >div {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+
+                // transform-style: preserve-3d;
+                &:nth-of-type(1) {
+                    background-color: #856f69;
+                }
+
+                &:nth-of-type(2) {
+                    background-color:$color1;
+                    transform: translateZ(-1px);
+
+                    >figure {
+                        opacity: 0.4;
+                    }
+                }
+
+            }
+
+
+        }
+
+        .one {
+            transform: translateZ(100px);
+
+            &:hover~.three {
+                transform-origin: left;
+                transform: perspective(1800px) rotatey(-140deg);
+            }
+
+            >div {
+                &:nth-of-type(2) {
+                    >figure {
+                        opacity: 0.2;
+                    }
+                }
+                &:nth-of-type(1) {
+                    >figure {
+                        opacity: 1;
+                    }
+                }
+
+                >figure {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+
+                    >img {
+                        object-position: -170px;
+                        object-fit: cover;
+                        height: 100%;
+                    }
+
+                }
+            }
+        }
+
+        .two {
+            background-color: #856f69;
+            transform: translateZ(-100px);
+
+            >.row{
+                text-transform: uppercase;
+                font-family:carter;
+                justify-content: center;
+                align-content: center;
+                >*{
+                    text-align: center;
+                    margin: 10px;
+                }
+                >h2{
+                    font-size: 1.9vw;
+                    width: 100%;
+                }
+                >p{
+                    font-size: 1vw;
+                    width: 100%;
+                    letter-spacing: 3px;
+                }
+                >nav{
+                    width: 100%;
+                    height: 35px;
+                    >ul{
+                        width: 100%;
+                        height: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        >li{
+                            height: 100%;
+                            margin: 5px;
+                            &:hover{
+                                >a{
+                                    background-color: $color1;
+                                    color: #856f69;
+                                }
+                            }
+                            >a{
+                                font-size: 1vw;
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                                border: 1px solid $color1;
+                                padding: 7px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover~.three {
+                transform-origin: left;
+                transform: perspective(1800px) rotatey(-140deg);
+            }
+            &:hover~.one {
+                transform-origin: right;
+                transform: perspective(1800px) rotatey(140deg) ;
+            }
+        }
+        
+        .three {
+            transform: translateZ(300px);
+            
+            &::after{
+                content: '';
+                height: 100%;
+                width: 20px;
+                right: -20px;
+                top:0;
+                background-color: azure;
+                position: absolute;
+                transform-origin: left;
+                transform:perspective(800px) rotatey(70deg);
+                transition: 1s;
+            }
+            >div {
+                >figure {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+            
+                    
+                    >img {
+                        width: 77%;
+                    }
+
+                }
+            }
+            &:hover~.one {
+                transform-origin: right;
+                transform: perspective(1800px) rotatey(140deg) ;
+            }
+
+        }
+    }
+}
